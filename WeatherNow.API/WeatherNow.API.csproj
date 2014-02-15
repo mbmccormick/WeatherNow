@@ -87,6 +87,15 @@
     <Compile Include="Entities\ForecastIORequest.cs" />
     <Compile Include="Entities\ForecastIOResponse.cs" />
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Geocoding\AddressComponent.cs" />
+    <Compile Include="Geocoding\GeocodeClient.cs" />
+    <Compile Include="Geocoding\GeocodeResponse.cs" />
+    <Compile Include="Geocoding\GeocodeResult.cs" />
+    <Compile Include="Geocoding\GeocodeStatus.cs" />
+    <Compile Include="Geocoding\GeoCoordinate.cs" />
+    <Compile Include="Geocoding\Geometry.cs" />
+    <Compile Include="Geocoding\GeoViewport.cs" />
+    <Compile Include="Geocoding\LocationType.cs" />
     <Compile Include="Helpers\RequestHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

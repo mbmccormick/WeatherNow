@@ -118,6 +118,25 @@ namespace WeatherNow.API
         public float visibility { get; set; }
         [DataMember]
         public float ozone { get; set; }
+
+        public string FriendlyTime
+        {
+            get
+            {
+                DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+                dtDateTime = dtDateTime.AddSeconds(time).ToLocalTime();
+
+                return dtDateTime.ToString("h:mmtt").ToLower();
+            }
+        }
+
+        public string FriendlyTemperature
+        {
+            get
+            {
+                return Convert.ToInt32(temperature) + "°";
+            }
+        }
     }
     [DataContract]
     public class Hourly
