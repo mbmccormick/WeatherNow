@@ -20,24 +20,16 @@
 
     <Grid x:Name="LayoutRoot" Background="#FF4099FF">
         <ProgressBar Name="prgLoading" Foreground="#FFFFFFFF" IsIndeterminate="True" Margin="0,0,0,0" VerticalAlignment="Top" />
-        
+
         <controls:Pivot x:Name="pivLayout" Title="WEATHERMAN" Margin="0,32,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="{StaticResource PhoneFontFamilySemiBold}">
             <controls:PivotItem Header="current" FontWeight="Normal" Margin="12,24,12,0">
                 <Grid Margin="0,0,0,72">
-                    <Grid x:Name="stkCurrent" Margin="0,0,0,12" Visibility="Collapsed">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-
-                        <TextBlock x:Name="txtTemperature" Grid.Row="0" Grid.Column="0" Margin="12,-60,12,-12" FontSize="225" FontFamily="{StaticResource PhoneFontFamilyLight}" />
-                        <TextBlock x:Name="txtCondition" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" />
-                        <TextBlock x:Name="txtDescription" Margin="12,24,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" />
-                    </Grid>
+                    <ScrollViewer Margin="0,0,0,0">
+                        <StackPanel x:Name="stkCurrent" Margin="0,0,0,12" Visibility="Collapsed">
+                            <TextBlock x:Name="txtTemperature" Margin="12,-72,12,0" FontSize="250" FontFamily="{StaticResource PhoneFontFamilyLight}" Grid.RowSpan="2" />
+                            <TextBlock x:Name="txtDescription" Margin="12,-12,12,12" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </ScrollViewer>
 
                     <TextBlock x:Name="txtCurrentLoading" Visibility="Visible" TextWrapping="Wrap" Margin="12,-6,0,0" Text="Just a moment..." Style="{StaticResource PhoneTextLargeStyle}" Foreground="#77FFFFFF" />
                 </Grid>

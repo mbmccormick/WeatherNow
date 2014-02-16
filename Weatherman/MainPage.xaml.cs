@@ -85,8 +85,12 @@ namespace Weatherman
         {
             this.prgLoading.Visibility = System.Windows.Visibility.Visible;
 
-            double latitude = position.Location.Latitude;
-            double longitude = position.Location.Longitude;
+            //double latitude = position.Location.Latitude;
+            //double longitude = position.Location.Longitude;
+
+            // seattle
+            double latitude = 47.6216;
+            double longitude = -122.3330;
 
             // san francisco
             //double latitude = 37.7882;
@@ -106,8 +110,7 @@ namespace Weatherman
                 SmartDispatcher.BeginInvoke(() =>
                 {
                     this.txtTemperature.Text = Convert.ToInt32(result.currently.temperature) + "°";
-                    this.txtCondition.Text = FormatText(result.currently.summary) + ", feels like " + Convert.ToInt32(result.currently.apparentTemperature) + "°.";
-                    this.txtDescription.Text = FormatDescriptionText(result.minutely.summary) + " " + FormatDescriptionText(result.hourly.summary);
+                    this.txtDescription.Text = FormatMinutelyText(result.minutely.summary) + ", feels like " + Convert.ToInt32(result.currently.apparentTemperature) + "°. " + FormatHourlyText(result.hourly.summary);
 
                     switch (result.currently.icon)
                     {
@@ -184,18 +187,24 @@ namespace Weatherman
             });
         }
 
-        private string FormatText(string value)
+        private string FormatMinutelyText(string value)
         {
-            string result = value.ToLower();
-            result = result.Substring(0, 1).ToUpper() + result.Substring(1);
+            string result = value.Replace("min.", "minutes").Trim();
+            result = result.Replace(" 1 minutes", " 1 minute");
+
+            if (result.EndsWith(".") == true)
+                result = result.Substring(0, result.Length - 1);
 
             return result;
         }
 
-        private string FormatDescriptionText(string value)
+        private string FormatHourlyText(string value)
         {
-            string result = value.Replace("min.", "minutes");
+            string result = value.Replace("min.", "minutes").Trim();
             result = result.Replace(" 1 minutes", " 1 minute");
+
+            if (result.EndsWith(".") == false) 
+                result = result + ".";
 
             return result;
         }

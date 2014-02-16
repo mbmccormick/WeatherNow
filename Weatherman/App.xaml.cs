@@ -63,8 +63,8 @@ namespace Weatherman
             // Phone-specific initialization
             InitializePhoneApplication();
 
-            //if (System.Diagnostics.Debugger.IsAttached)
-            //    MetroGridHelper.IsVisible = true;
+            if (System.Diagnostics.Debugger.IsAttached)
+                MetroGridHelper.IsVisible = true;
         }
 
         private void Application_Launching(object sender, LaunchingEventArgs e)
