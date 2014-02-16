@@ -35,7 +35,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock x:Name="txtTemperature" Grid.Row="0" Grid.Column="0" Margin="12,-60,12,-12" FontSize="225" FontFamily="{StaticResource PhoneFontFamilyLight}" />
-                        <TextBlock x:Name="txtCondition" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextTitle2Style}" />
+                        <TextBlock x:Name="txtCondition" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" />
                         <TextBlock x:Name="txtDescription" Margin="12,24,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextTitle2Style}" TextWrapping="Wrap" />
                     </Grid>
 
