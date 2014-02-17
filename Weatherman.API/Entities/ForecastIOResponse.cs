@@ -72,6 +72,10 @@ namespace Weatherman.API
         public Int64 time { get; set; }
         [DataMember]
         public float precipIntensity { get; set; }
+        [DataMember]
+        public float precipProbability { get; set; }
+        [DataMember]
+        public string precipType { get; set; }
     }
     [DataContract]
     public class Minutely

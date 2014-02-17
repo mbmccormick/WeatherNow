@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weatherman", "Weatherman\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weatherman.API", "Weatherman.API\Weatherman.API.csproj", "{A10DACF5-DDA8-4862-A91A-2DF26FD2C805}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weatherman.Background", "Weatherman.Background\Weatherman.Background.csproj", "{E0C73E2E-5AD7-4409-B97B-359241F6D36F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,18 @@ Global
 		{A10DACF5-DDA8-4862-A91A-2DF26FD2C805}.Release|ARM.Build.0 = Release|ARM
 		{A10DACF5-DDA8-4862-A91A-2DF26FD2C805}.Release|x86.ActiveCfg = Release|x86
 		{A10DACF5-DDA8-4862-A91A-2DF26FD2C805}.Release|x86.Build.0 = Release|x86
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Debug|ARM.Build.0 = Debug|ARM
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Debug|x86.ActiveCfg = Debug|x86
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Debug|x86.Build.0 = Debug|x86
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Release|ARM.ActiveCfg = Release|ARM
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Release|ARM.Build.0 = Release|ARM
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Release|x86.ActiveCfg = Release|x86
+		{E0C73E2E-5AD7-4409-B97B-359241F6D36F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
