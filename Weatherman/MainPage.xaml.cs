@@ -85,12 +85,12 @@ namespace Weatherman
         {
             this.prgLoading.Visibility = System.Windows.Visibility.Visible;
 
-            //double latitude = position.Location.Latitude;
-            //double longitude = position.Location.Longitude;
+            double latitude = position.Location.Latitude;
+            double longitude = position.Location.Longitude;
 
             // seattle
-            double latitude = 47.6216;
-            double longitude = -122.3330;
+            //double latitude = 47.6216;
+            //double longitude = -122.3330;
 
             // san francisco
             //double latitude = 37.7882;
@@ -110,7 +110,8 @@ namespace Weatherman
                 SmartDispatcher.BeginInvoke(() =>
                 {
                     this.txtTemperature.Text = Convert.ToInt32(result.currently.temperature) + "°";
-                    this.txtDescription.Text = FormatMinutelyText(result.minutely.summary) + ", feels like " + Convert.ToInt32(result.currently.apparentTemperature) + "°. " + FormatHourlyText(result.hourly.summary);
+                    this.txtNextHour.Text = FormatMinutelyText(result.minutely.summary);
+                    this.txtNext24Hours.Text = FormatHourlyText(result.hourly.summary);
 
                     switch (result.currently.icon)
                     {
@@ -192,8 +193,8 @@ namespace Weatherman
             string result = value.Replace("min.", "minutes").Trim();
             result = result.Replace(" 1 minutes", " 1 minute");
 
-            if (result.EndsWith(".") == true)
-                result = result.Substring(0, result.Length - 1);
+            if (result.EndsWith(".") == false)
+                result = result + ".";
 
             return result;
         }
@@ -215,7 +216,7 @@ namespace Weatherman
             this.txtForecastLoading.Visibility = System.Windows.Visibility.Collapsed;
 
             this.stkCurrent.Visibility = System.Windows.Visibility.Visible;
-            this.lstForecast.Visibility = System.Windows.Visibility.Visible;
+            this.stkForecast.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
