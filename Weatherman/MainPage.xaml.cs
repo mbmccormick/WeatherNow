@@ -216,7 +216,8 @@ namespace Weatherman
             this.txtForecastLoading.Visibility = System.Windows.Visibility.Collapsed;
 
             this.stkCurrent.Visibility = System.Windows.Visibility.Visible;
-            this.stkForecast.Visibility = System.Windows.Visibility.Visible;
+            this.lstForecast.Visibility = System.Windows.Visibility.Visible;
+            this.lstForecastHeader.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

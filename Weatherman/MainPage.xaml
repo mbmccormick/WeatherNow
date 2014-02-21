@@ -39,37 +39,42 @@
 
             <controls:PivotItem Header="forecast" FontWeight="Normal" Margin="12,24,12,0">
                 <Grid Margin="0,0,0,72">
-                    <StackPanel x:Name="stkForecast" Margin="0,0,0,12" Visibility="Collapsed">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="110" />
-                                <ColumnDefinition Width="78" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid x:Name="lstForecastHeader" Grid.Row="0" Visibility="Collapsed">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110" />
+                            <ColumnDefinition Width="245" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Hour" Grid.Column="0" Margin="12,0,12,12" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" Opacity="0.5" />
-                            <TextBlock Text="Temp" Grid.Column="1" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" Opacity="0.5" />
-                            <TextBlock Text="Condition" Grid.Column="2" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" Opacity="0.5" />
-                        </Grid>
+                        <TextBlock Text="Time" Grid.Column="0" Margin="12,0,12,12" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" Opacity="0.5" />
+                        <TextBlock Text="Forecast" Grid.Column="1" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" Opacity="0.5" />
+                        <TextBlock Text="Precip." Grid.Column="2" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" Opacity="0.5" />
+                    </Grid>
 
-                        <ListBox x:Name="lstForecast" Margin="0,0,-12,0">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="110" />
-                                            <ColumnDefinition Width="78" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
+                    <ListBox x:Name="lstForecast" Grid.Row="1" Visibility="Collapsed">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="110" />
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="185" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="{Binding FriendlyTime}" Grid.Column="0" Margin="12,0,12,12" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" />
-                                        <TextBlock Text="{Binding FriendlyTemperature}" Grid.Column="1" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" />
-                                        <TextBlock Text="{Binding summary}" Grid.Column="2" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" />
-                                    </Grid>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </StackPanel>
+                                    <TextBlock Text="{Binding FriendlyTime}" Grid.Column="0" Margin="12,0,0,12" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" />
+                                    <TextBlock Text="{Binding FriendlyTemperature}" Grid.Column="1" Margin="12,0,0,0" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="{StaticResource PhoneFontFamilySemiBold}" />
+                                    <TextBlock Text="{Binding summary}" Grid.Column="2" Margin="0,0,0,0" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" />
+                                    <TextBlock Text="{Binding FriendlyPrecipProbability}" Grid.Column="3" Style="{StaticResource PhoneTextLargeStyle}" FontSize="{StaticResource PhoneFontSizeMedium}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
 
                     <TextBlock x:Name="txtForecastLoading" Visibility="Visible" TextWrapping="Wrap" Margin="12,-6,0,0" Text="Just a moment..." Style="{StaticResource PhoneTextLargeStyle}" Foreground="#77FFFFFF" />
                 </Grid>

@@ -126,7 +126,7 @@ namespace Weatherman.API
                 DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
                 dtDateTime = dtDateTime.AddSeconds(time).ToLocalTime();
 
-                return dtDateTime.ToString("h:mmtt").ToLower();
+                return dtDateTime.ToString("h:mm tt").ToUpper();
             }
         }
 
@@ -135,6 +135,14 @@ namespace Weatherman.API
             get
             {
                 return Convert.ToInt32(temperature) + "°";
+            }
+        }
+
+        public string FriendlyPrecipProbability
+        {
+            get
+            {
+                return Math.Round(precipProbability * 100, 0) + "%";
             }
         }
     }
