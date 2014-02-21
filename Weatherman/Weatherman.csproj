@@ -158,10 +158,6 @@
       <Project>{A10DACF5-DDA8-4862-A91A-2DF26FD2C805}</Project>
       <Name>Weatherman.API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Weatherman.Background\Weatherman.Background.csproj">
-      <Project>{E0C73E2E-5AD7-4409-B97B-359241F6D36F}</Project>
-      <Name>Weatherman.Background</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
