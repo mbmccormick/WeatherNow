@@ -116,10 +116,10 @@ namespace Weatherman
                     switch (result.currently.icon)
                     {
                         case "clear-day":
-                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 222, 215, 20));
+                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 119, 209, 206));
                             break;
                         case "clear-night":
-                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 133, 133, 133));
+                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 115, 115, 115));
                             break;
                         case "rain":
                             this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 141, 196, 196));
@@ -134,7 +134,7 @@ namespace Weatherman
                             this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 76, 224, 81));
                             break;
                         case "fog":
-                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 255, 139, 89));
+                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 255, 109, 77));
                             break;
                         case "cloudy":
                             this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 64, 153, 255));
@@ -143,10 +143,10 @@ namespace Weatherman
                             this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 64, 153, 255));
                             break;
                         case "partly-cloudy-night":
-                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 133, 133, 133));
+                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 115, 115, 115));
                             break;
                         default:
-                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 64, 153, 255));
+                            this.LayoutRoot.Background = new SolidColorBrush(Color.FromArgb(255, 119, 209, 206));
                             break;
                     }
 

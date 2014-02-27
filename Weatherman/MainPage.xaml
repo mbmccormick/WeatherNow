@@ -17,13 +17,13 @@
     shell:SystemTray.IsVisible="False"
     DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
-    <Grid x:Name="LayoutRoot" Background="#FF4099FF">
+    <Grid x:Name="LayoutRoot" Background="#FF77D1CE">
         <ProgressBar Name="prgLoading" Foreground="#FFFFFFFF" IsIndeterminate="True" Margin="0,0,0,0" VerticalAlignment="Top" />
 
         <controls:Pivot x:Name="pivLayout" Title="WEATHERMAN" Margin="0,6,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="{StaticResource PhoneFontFamilySemiBold}">
             <controls:PivotItem Header="current" FontWeight="Normal" Margin="12,24,12,0">
                 <Grid Margin="0,0,0,72">
-                    <StackPanel x:Name="stkCurrent" Margin="0,0,0,12" Visibility="Collapsed">
+                    <StackPanel x:Name="stkCurrent" Margin="0,0,0,0" Visibility="Collapsed">
                         <TextBlock x:Name="txtTemperature" Margin="12,-72,12,-24" FontSize="250" FontFamily="{StaticResource PhoneFontFamilyLight}" Grid.RowSpan="2" />
 
                         <TextBlock Text="Next Hour:" Margin="12,18,12,0" Style="{StaticResource PhoneTextTitle3Style}" Opacity="0.5" />

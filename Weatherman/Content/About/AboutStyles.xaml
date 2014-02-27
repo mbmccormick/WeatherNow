@@ -17,7 +17,7 @@
 
         <!-- Use the following setter to enable/disable the system tray on the about page -->
         <Setter Property="shell:SystemTray.IsVisible"
-                Value="True" />
+                Value="False" />
 
         <!-- You can use setters like the following to add transitions to your about page. 
              To make this work, you have to add:
@@ -66,6 +66,7 @@
                 </DataTemplate>
             </Setter.Value>
         </Setter>-->
+        <Setter Property="Background" Value="#FF77D1CE" />
         <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}" />
         <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
     </Style>
@@ -80,7 +81,7 @@
            TargetType="TextBlock"
            BasedOn="{StaticResource PhoneTextExtraLargeStyle}">
         <Setter Property="Foreground"
-                Value="{StaticResource PhoneAccentColor}" />
+                Value="#FFFFFFFF" />
     </Style>
 
     <Style x:Key="AboutTextSubTitleStyle"
@@ -97,7 +98,7 @@
            TargetType="TextBlock"
            BasedOn="{StaticResource PhoneTextNormalStyle}">
         <Setter Property="Foreground"
-                Value="{StaticResource PhoneAccentColor}" />
+                Value="#FFFFFFFF" />
         <Setter Property="FontWeight"
                 Value="Bold" />
     </Style>
@@ -105,7 +106,7 @@
     <Style x:Key="AboutHyperlinkButtonStyle"
            TargetType="HyperlinkButton">
         <Setter Property="Foreground"
-                Value="{StaticResource PhoneAccentColor}" />
+                Value="#FFFFFFFF" />
     </Style>
 
     <!-- The style used for the buttons (e.g. the review button) -->
@@ -113,3 +114,4 @@
            TargetType="Button">
     </Style>
 </ResourceDictionary>
+
