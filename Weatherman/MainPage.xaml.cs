@@ -43,6 +43,12 @@ namespace Weatherman
 
             ApplicationBar.Buttons.Add(refresh);
 
+            ApplicationBarMenuItem toggleLocation = new ApplicationBarMenuItem();
+            toggleLocation.Text = "turn location off";
+            toggleLocation.Click += mnuToggleLocation_Click;
+
+            ApplicationBar.MenuItems.Add(toggleLocation);
+
             ApplicationBarMenuItem about = new ApplicationBarMenuItem();
             about.Text = "about";
             about.Click += mnuAbout_Click;
@@ -228,6 +234,22 @@ namespace Weatherman
             isGeocodingLoaded = false;
 
             LoadData(locationService.Position);
+        }
+        
+        private void mnuToggleLocation_Click(object sender, EventArgs e)
+        {
+            ApplicationBarMenuItem target = (ApplicationBarMenuItem)sender;
+
+            if (target.Text == "turn location off")
+            {
+                target.Text = "turn location on";
+                locationService.Stop();
+            }
+            else
+            {
+                target.Text = "turn location off";
+                locationService.Start();
+            }
         }
 
         private void mnuAbout_Click(object sender, EventArgs e)
